@@ -1,0 +1,6 @@
+apiVersion: v2
+name: magnolia
+description: Deploy Magnolia cms container
+type: application
+version: 1.0.0
+appVersion: 6.2.3

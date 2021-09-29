@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <magnoliaBundleVersion>6.2.1</magnoliaBundleVersion>
+        <magnoliaBundleVersion>6.2.3</magnoliaBundleVersion>
         <javaVersion>1.11</javaVersion>
         <jsonfnVersion>1.0.8</jsonfnVersion>
     </properties>

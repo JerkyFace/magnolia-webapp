@@ -59,9 +59,32 @@
     </dependencies>
 
     <build>
+        <finalName>
+            magnolia
+        </finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>author</id>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                        <configuration>
+                            <warName>magnoliaAuthor</warName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>public</id>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                        <configuration>
+                            <warName>magnoliaPublic</warName>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
                     <!-- exclude jars copied "physically" from the webapp overlay - so we only get those resolved by Maven's dependency management -->
                     <dependentWarExcludes>WEB-INF/lib/*.jar</dependentWarExcludes>
