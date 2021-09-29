@@ -5,7 +5,7 @@
     <groupId>ru.digitalleague</groupId>
     <artifactId>magnolia-intranet-mvp</artifactId>
     <name>magnolia-intranet-mvp (parent pom)</name>
-    <version>1.0.0</version>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
 
     <properties>
