@@ -9,7 +9,7 @@ RUN chmod 755 /opt/magnolia
 
 ARG ARTIFACT_VERSION
 ARG WARNAME
-ENV POSTGRESQL_VER 42.2.24
+ENV POSTGRESQL_VER 42.2.18
 
 RUN rm -rf $CATALINA_HOME/webapps/magnoliaAuthor $CATALINA_HOME/webapps/magnoliaPublic && \
 mkdir $CATALINA_HOME/lib/jdbc && \

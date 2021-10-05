@@ -56,6 +56,12 @@
             <groupId>info.magnolia.templating</groupId>
             <artifactId>magnolia-jsonfn</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.18</version>
+        </dependency>
     </dependencies>
 
     <build>
