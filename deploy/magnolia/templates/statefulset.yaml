@@ -45,10 +45,13 @@ spec:
           volumeMounts:
             - name: magnolia-home
               mountPath: /opt/magnolia
+            - name: mounted-config
+              mountPath: /usr/local/tomcat/config/repo-conf/jackrabbit-bundle-postgres-search.xml
+              subPath: jackrabbit-bundle-postgres-search.xml
       volumes:
         - name: mounted-config
           configMap:
-            name: {{ template "magnolia.fullname" . }}
+            name: {{ template "magnolia.fullname" . }}-author
         - name: magnolia-home
           emptyDir: {}
       {{- with .Values.nodeSelector }}
@@ -105,8 +108,16 @@ spec:
             - name: http
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
+          volumeMounts:
+            - name: mounted-config
+              mountPath: /usr/local/tomcat/config/repo-conf/jackrabbit-bundle-postgres-search.xml
+              subPath: jackrabbit-bundle-postgres-search.xml
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: mounted-config
+          configMap:
+            name: {{ template "magnolia.fullname" . }}-public
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

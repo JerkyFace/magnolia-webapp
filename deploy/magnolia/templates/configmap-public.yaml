@@ -1,0 +1,13 @@
+{{- $fullName := include "magnolia.fullname" . -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "magnolia.fullname" . }}-public
+  labels:
+    app: {{ template "magnolia.name" . }}
+    chart: {{ template "magnolia.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  "jackrabbit-bundle-postgres-search.xml": |-
+{{ tpl (.Files.Get "config/jackrabbit-bundle-postgres-search-public.xml") . | indent 8 }}
