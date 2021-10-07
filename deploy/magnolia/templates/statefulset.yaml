@@ -46,7 +46,7 @@ spec:
             - name: magnolia-home
               mountPath: /opt/magnolia
             - name: mounted-config
-              mountPath: /usr/local/tomcat/config/repo-conf/jackrabbit-bundle-postgres-search.xml
+              mountPath: /usr/local/config/repo-conf/jackrabbit-bundle-postgres-search.xml
               subPath: jackrabbit-bundle-postgres-search.xml
       volumes:
         - name: mounted-config

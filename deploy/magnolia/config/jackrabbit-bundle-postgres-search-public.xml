@@ -4,7 +4,7 @@
     <DataSources>
         <DataSource name="magnolia">
             <param name="driver" value="org.postgresql.Driver" />
-            <param name="url" value="jdbc:postgresql://10.110.45.208:5432/postgres" />
+            <param name="url" value="jdbc:postgresql://10.101.118.17:5432/postgres" />
             <param name="user" value="postgres" />
             <param name="password" value="sa" />
             <param name="databaseType" value="postgresql"/>

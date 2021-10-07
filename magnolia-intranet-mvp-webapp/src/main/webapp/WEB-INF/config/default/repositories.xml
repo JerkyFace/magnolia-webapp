@@ -24,16 +24,13 @@
 ]><JCR>
 
     <RepositoryMapping>
-        <Map name="config" repositoryName="magnolia" workspaceName="config" />
         <Map name="website" repositoryName="magnolia" workspaceName="website" />
+        <Map name="config" repositoryName="magnolia" workspaceName="config" />
         <Map name="users" repositoryName="magnolia" workspaceName="users" />
         <Map name="userroles" repositoryName="magnolia" workspaceName="userroles" />
         <Map name="usergroups" repositoryName="magnolia" workspaceName="usergroups" />
         <Map name="mgnlSystem" repositoryName="magnolia" workspaceName="mgnlSystem" /> <!-- System internal data -->
         <Map name="mgnlVersion" repositoryName="magnolia" workspaceName="mgnlVersion" /> <!-- magnolia version workspace -->
-
-        <Map name="forum" repositoryName="magnoliacluster" workspaceName="forum" />
-        
     </RepositoryMapping>
 
     <!-- magnolia default repository -->
@@ -46,19 +43,14 @@
         <param name="contextFactoryClass" value="org.apache.jackrabbit.core.jndi.provider.DummyInitialContextFactory" />
         <param name="providerURL" value="localhost" />
         <param name="bindName" value="${magnolia.webapp}" />
+        <workspace name="website" />
         <workspace name="config" />
+        <workspace name="users" />
+        <workspace name="userroles" />
+        <workspace name="usergroups" />
+        <workspace name="mgnlSystem" />
+        <workspace name="mgnlVersion" />
     </Repository>
 
-    <!-- magnolia non-default repository -->
-    <Repository name="magnoliacluster" provider="info.magnolia.jackrabbit.ProviderImpl" loadOnStartup="true">
-        <param name="configFile" value="${magnolia.repositories.jackrabbit.cluster.config}" />
-        <param name="repositoryHome" value="${magnolia.repositories.home}/magnoliacluster" />
-        <!-- the default node types are loaded automatically
-			<param name="customNodeTypes" value="WEB-INF/config/repo-conf/nodetypes/magnolia_nodetypes.xml" />
-		-->
-        <param name="contextFactoryClass" value="org.apache.jackrabbit.core.jndi.provider.DummyInitialContextFactory" />
-        <param name="providerURL" value="localhost" />
-        <param name="bindName" value="cluster-${magnolia.webapp}" />
-        <workspace name="forum" />
-    </Repository>
+
 </JCR>
