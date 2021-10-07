@@ -4,9 +4,9 @@
     <DataSources>
         <DataSource name="magnolia">
             <param name="driver" value="org.postgresql.Driver" />
-            <param name="url" value="jdbc:postgresql://pg-author-postgresql:5432/postgres" />
-            <param name="user" value="postgres" />
-            <param name="password" value="sa" />
+            <param name="url" value="{{ .Values.dataSourcePublic.url }}" />
+            <param name="user" value="{{ .Values.dataSourcePublic.username }}" />
+            <param name="password" value="{{ .Values.dataSourcePublic.password }}" />
             <param name="databaseType" value="postgresql"/>
         </DataSource>
     </DataSources>

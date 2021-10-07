@@ -1,0 +1,9 @@
+dataSourceAuthor:
+  url: "jdbc:postgresql://pg-author-postgresql:5432/postgres"
+  username: "postgres"
+  password: "sa"
+
+dataSourcePublic:
+  url: "jdbc:postgresql://pg-public-postgresql:5432/postgres"
+  username: "postgres"
+  password: "sa"

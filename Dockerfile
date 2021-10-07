@@ -3,13 +3,14 @@ FROM tomcat:9.0-jdk11-openjdk
 ENV JAVA_OPTS="-Dmagnolia.home=/opt/magnolia -Dmagnolia.resources.dir=/opt/magnolia -Dmagnolia.update.auto=true"
 COPY setenv.sh $CATALINA_HOME/bin/setenv.sh
 COPY context.xml $CATALINA_HOME/conf/context.xml
-COPY jackrabbit-bundle-postgres-search.xml /usr/local/config/repo-conf/jackrabbit-bundle-postgres-search.xml
 RUN chmod +x $CATALINA_HOME/bin/setenv.sh
 
 RUN chmod 777 -R $CATALINA_HOME
 
 RUN mkdir /opt/magnolia
 RUN chmod 755 /opt/magnolia
+
+COPY magnolia-activation-keypair.properties /opt/
 
 ARG ARTIFACT_VERSION
 ARG WARNAME
